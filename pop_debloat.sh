@@ -70,21 +70,18 @@ gaming () {
 	echo "Tuning Pop_OS for gaming"
 	sleep 1s
 
-	sudo apt-get install steam discord -y
+	sudo apt-get install steam discord openjdk-17-jre -y
 
 	echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list && wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key add -
 	sudo apt-get update && sudo apt-get install linux-xanmod -y
 
-	if [ $graphic = 'amd' ]; then
-		#sudo su
-		#printf "RADV_PERFTEST=aco" >> /etc/environment
-# fixare; Lo script deve uscire dall'utente root, ma non dallo script. il comando exit non funziona
-# fixare; Printf non funziona
-	fi
+	#if [ $graphic = 'amd' ]; then
+		#sudo printf "RADV_PERFTEST=aco" >> /etc/environment
+	#fi
 
 	# Installing Wine
 	wget -nc https://dl.winehq.org/wine-builds/winehq.key
-	sudo apt-key add winehq.key # apt-key is deprecated
+	sudo apt-key add winehq.key # apt-key is deprecated but still working, have to update this
 
 	if [ $dist = 'Focal' ]; then
 		sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
@@ -117,23 +114,17 @@ gaming () {
 	# Installing Heroic
 	bash <(wget -O- https://raw.githubusercontent.com/Heroic-Games-Launcher/HeroicGamesLauncher/main/madrepo.sh)
 	sudo apt-get install heroic -y
-
-# 	Minecraft alternative launcher and java 17
-#	sudo apt-get install openjdk-17-jre -y
-	
-	clear
 }
 
 software () {
 	echo "Installing reccomended software"
-	sudo apt-get install micro pluma gnome-tweaks zsh kitty -y
-# 	SSH:
-#	sudo apt-get install ssh -y
+	sudo apt-get install micro pluma gnome-tweaks kitty ssh -y
 
 # 	QEMU:
 # 	sudo apt-get install qemu-kvm qemu virt-manager virt-viewer -y
 
 # 	Oh my ZSH script:
+# 	sudo apt-get install zsh -y
 #	cd ~/ && wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 #	sh install.sh
 # 	chsh -s $(which zsh)
