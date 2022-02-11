@@ -51,9 +51,7 @@ debloat () {
 	sleep 1s
 
     sudo apt-get autoremove --purge geary gedit gnome-calendar gnome-contacts gnome-weather libreoffice-* -y
-# 	sudo apt-get remove pop-shop -y
-# 	sudo flatpak remove --all -y 
-# 	sudo apt-get remove flatpak -y
+	clear
 }
 
 if [ $graphic = "amd" ]; then
@@ -74,10 +72,6 @@ gaming () {
 
 	echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list && wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key add -
 	sudo apt-get update && sudo apt-get install linux-xanmod -y
-
-	#if [ $graphic = 'amd' ]; then
-		#sudo printf "RADV_PERFTEST=aco" >> /etc/environment
-	#fi
 
 	# Installing Wine
 	wget -nc https://dl.winehq.org/wine-builds/winehq.key
@@ -114,20 +108,12 @@ gaming () {
 	# Installing Heroic
 	bash <(wget -O- https://raw.githubusercontent.com/Heroic-Games-Launcher/HeroicGamesLauncher/main/madrepo.sh)
 	sudo apt-get install heroic -y
+	clear
 }
 
 software () {
 	echo "Installing reccomended software"
 	sudo apt-get install micro pluma gnome-tweaks kitty ssh -y
-
-# 	QEMU:
-# 	sudo apt-get install qemu-kvm qemu virt-manager virt-viewer -y
-
-# 	Oh my ZSH script:
-# 	sudo apt-get install zsh -y
-#	cd ~/ && wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-#	sh install.sh
-# 	chsh -s $(which zsh)
 }
 
 end () {
