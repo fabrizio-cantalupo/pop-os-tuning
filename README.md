@@ -1,11 +1,11 @@
 ## Run the script
 First download the script cloning the Github repository or downloading the ZIP file.
-To run this script, open a terminal, and use the command:
-`bash ~/Downloads/pop_debloat.sh`
+To run this script, open a terminal, and use the command: <br>
+`bash ~/Downloads/pop_debloat.sh` <br>
 Answer the first question, and let the script do the magic!
 ## Finding video card manufacter
-If you don't know your video card manufacter, you can use the command
-`lspci | grep VGA`
+If you don't know your video card manufacter, you can use the command: <br>
+`lspci | grep VGA` <br>
 For example, my video card is AMD.
 [![lspci-VGA-command-example.png](https://i.postimg.cc/pdQgVdL1/lspci-VGA-command-example.png)](https://postimg.cc/DWZCBnsq)
 ## Used software
