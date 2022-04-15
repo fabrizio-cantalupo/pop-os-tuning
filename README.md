@@ -7,7 +7,7 @@ Answer the first question, and let the script do the magic!
 If you don't know your video card manufacter, you can use the command: <br>
 `lspci | grep VGA` <br>
 For example, my video card is AMD.
-[![lspci-VGA-command-example.png](https://de.catbox.moe/o6wxcv.png)]
+[lspci-VGA-command-example.png](https://de.catbox.moe/o6wxcv.png)
 ## Used software
 I personally choose the software that you will find in the script:
 ### Gaming software
